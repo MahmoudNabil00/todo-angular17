@@ -1,0 +1,20 @@
+@if (checkIfTasksEmpty()) {
+    <footer class="footer">
+        <span class="todo-count">
+            <strong>
+                {{activeCount()}}
+            </strong>
+        </span>
+        <ul class="filters">
+            <li>
+                <a href="/" (click)="changeFilter($event,filterEnum.all)" [ngClass]="{selected:filterFromSig() === filterEnum.all}">All</a>
+            </li>
+            <li>
+                <a href="/" (click)="changeFilter($event,filterEnum.active)" [ngClass]="{selected:filterFromSig() === filterEnum.active}">Active</a>
+            </li>
+            <li>
+                <a href="/" (click)="changeFilter($event,filterEnum.completed)" [ngClass]="{selected:filterFromSig() === filterEnum.completed}">Completed</a>
+            </li>
+        </ul>
+    </footer>
+}
